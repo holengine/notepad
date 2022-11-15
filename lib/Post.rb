@@ -94,7 +94,7 @@ class Post
     db.results_as_hash = true
 
     post_hash = to_db_hash
-    
+
     begin
       db.execute(
         "INSERT INTO posts (#{post_hash.keys.join(', ')}) VALUES (#{('?,' * post_hash.size).chomp(',')})",
